@@ -6,10 +6,11 @@
  * This script parses drupal.org, and creates a txt file with a list of drupal related companies.
  */
 
-$url = "https://www.drupal.org/drupal-services/Development";
+
 $pages = [];
 // Currently there are 32 pages, check it and adjust loop accordingly.
 for ($i = 0; $i < 32; $i++) {
+  $url = "https://www.drupal.org/drupal-services/Development";
   if ($i != 0) {
     $url .= "?page=" . $i;
   }
