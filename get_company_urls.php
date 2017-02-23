@@ -19,9 +19,10 @@ foreach($urls as $n => $url) {
   $s = strpos($link, 'http');
   $e = strpos($link, '">');
   $text .= substr($link, $s, $e - $s);
-  if (preg_match("/<dt>Usual project budget<\/dt><dd>(.*)<\/dd>/u", $page, $m)) {
+  if (preg_match("/<dt>Usual project budget<\/dt><dd>(.*)<\/dd>/U", $page, $m)) {
     $text .= ',' . $m[1];
   }
   $text .= "\n";
 }
 file_put_contents('company_urls.txt', $text);
+
